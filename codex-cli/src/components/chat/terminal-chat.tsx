@@ -146,7 +146,7 @@ export default function TerminalChat({
 }: Props): React.ReactElement {
   const notify = Boolean(config.notify);
   const [model, setModel] = useState<string>(config.model);
-  const [provider, setProvider] = useState<string>(config.provider || "openai");
+  const [provider, setProvider] = useState<string>(config.provider || "azure");
   const [lastResponseId, setLastResponseId] = useState<string | null>(null);
   const [items, setItems] = useState<Array<ResponseItem>>([]);
   const [loading, setLoading] = useState<boolean>(false);

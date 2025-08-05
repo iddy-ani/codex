@@ -75,8 +75,8 @@ const cli = meow(
     --version                       Print version and exit
 
     -h, --help                      Show usage and exit
-    -m, --model <model>             Model to use for completions (default: codex-mini-latest)
-    -p, --provider <provider>       Provider to use for completions (default: openai)
+    -m, --model <model>             Model to use for completions (default: codex-mini)
+    -p, --provider <provider>       Provider to use for completions (default: azure)
     -i, --image <path>              Path(s) to image files to include as input
     -v, --view <rollout>            Inspect a previously saved rollout instead of starting a session
     --history                       Browse previous sessions
@@ -292,7 +292,7 @@ let config = loadConfig(undefined, undefined, {
 let prompt = cli.input[0];
 const model = cli.flags.model ?? config.model;
 const imagePaths = cli.flags.image;
-const provider = cli.flags.provider ?? config.provider ?? "openai";
+const provider = cli.flags.provider ?? config.provider ?? "azure";
 
 const client = {
   issuer: "https://auth.openai.com",
@@ -382,7 +382,7 @@ if (cli.flags.free && provider.toLowerCase() === "openai") {
 }
 
 // Set of providers that don't require API keys
-const NO_API_KEY_REQUIRED = new Set(["ollama"]);
+const NO_API_KEY_REQUIRED = new Set(["ollama", "azure"]);
 
 // Skip API key validation for providers that don't require an API key
 if (!apiKey && !NO_API_KEY_REQUIRED.has(provider.toLowerCase())) {

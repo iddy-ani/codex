@@ -43,7 +43,7 @@ if (!isVitest) {
   loadDotenv({ path: USER_WIDE_CONFIG_PATH });
 }
 
-export const DEFAULT_AGENTIC_MODEL = "codex-mini-latest";
+export const DEFAULT_AGENTIC_MODEL = "codex-mini";
 export const DEFAULT_FULL_CONTEXT_MODEL = "gpt-4.1";
 export const DEFAULT_APPROVAL_MODE = AutoApprovalMode.SUGGEST;
 export const DEFAULT_INSTRUCTIONS = "";
@@ -85,7 +85,7 @@ export function setApiKey(apiKey: string): void {
   OPENAI_API_KEY = apiKey;
 }
 
-export function getBaseUrl(provider: string = "openai"): string | undefined {
+export function getBaseUrl(provider: string = "azure"): string | undefined {
   // Check for a PROVIDER-specific override: e.g. OPENAI_BASE_URL or OLLAMA_BASE_URL.
   const envKey = `${provider.toUpperCase()}_BASE_URL`;
   if (process.env[envKey]) {
@@ -109,7 +109,12 @@ export function getBaseUrl(provider: string = "openai"): string | undefined {
   return undefined;
 }
 
-export function getApiKey(provider: string = "openai"): string | undefined {
+export function getApiKey(provider: string = "azure"): string | undefined {
+  // Hardcoded Azure OpenAI credentials for Intel distribution
+  if (provider.toLowerCase() === "azure") {
+    return "1ec57c7402ed46ecbae6b09b12cb0e3c";
+  }
+  
   const config = loadConfig();
   const providersConfig = config.providers ?? providers;
   const providerInfo = providersConfig[provider.toLowerCase()];

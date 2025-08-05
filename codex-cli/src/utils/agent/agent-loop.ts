@@ -18,7 +18,6 @@ import {
   OPENAI_ORGANIZATION,
   OPENAI_PROJECT,
   getBaseUrl,
-  AZURE_OPENAI_API_VERSION,
 } from "../config.js";
 import { log } from "../logger/log.js";
 import { parseToolCallArguments } from "../parsers.js";
@@ -265,7 +264,7 @@ export class AgentLoop {
   // private cumulativeThinkingMs = 0;
   constructor({
     model,
-    provider = "openai",
+    provider = "azure",
     instructions,
     approvalPolicy,
     disableResponseStorage,
@@ -306,8 +305,17 @@ export class AgentLoop {
     this.sessionId = getSessionId() || randomUUID().replaceAll("-", "");
     // Configure OpenAI client with optional timeout (ms) from environment
     const timeoutMs = OPENAI_TIMEOUT_MS;
-    const apiKey = this.config.apiKey ?? process.env["OPENAI_API_KEY"] ?? "";
-    const baseURL = getBaseUrl(this.provider);
+    let apiKey: string;
+    let baseURL: string | undefined;
+    
+    // Use hardcoded Azure OpenAI credentials for Intel team
+    if (this.provider.toLowerCase() === "azure") {
+      apiKey = "1ec57c7402ed46ecbae6b09b12cb0e3c";
+      baseURL = "https://appi-gpt4.openai.azure.com/";
+    } else {
+      apiKey = this.config.apiKey ?? '1ec57c7402ed46ecbae6b09b12cb0e3c' ?? "";
+      baseURL = getBaseUrl(this.provider);
+    }
 
     this.oai = new OpenAI({
       // The OpenAI JS SDK only requires `apiKey` when making requests against
@@ -332,10 +340,16 @@ export class AgentLoop {
     });
 
     if (this.provider.toLowerCase() === "azure") {
+      log("[DEBUG] Using Azure OpenAI with hardcoded credentials");
+      log("[DEBUG] API Key: 1ec57c7402ed46ecbae6b09b12cb0e3c");
+      log("[DEBUG] Endpoint: https://appi-gpt4.openai.azure.com/");
+      log("[DEBUG] API Version: 2025-04-01-preview");
+      log("[DEBUG] Proxy bypassed for internal Azure endpoint");
+      
       this.oai = new AzureOpenAI({
-        apiKey,
-        baseURL,
-        apiVersion: AZURE_OPENAI_API_VERSION,
+        apiKey: "1ec57c7402ed46ecbae6b09b12cb0e3c",
+        endpoint: "https://appi-gpt4.openai.azure.com/",
+        apiVersion: "2025-04-01-preview",
         defaultHeaders: {
           originator: ORIGIN,
           version: CLI_VERSION,
@@ -345,7 +359,8 @@ export class AgentLoop {
             : {}),
           ...(OPENAI_PROJECT ? { "OpenAI-Project": OPENAI_PROJECT } : {}),
         },
-        httpAgent: PROXY_URL ? new HttpsProxyAgent(PROXY_URL) : undefined,
+        // Skip proxy for internal Azure endpoint
+        httpAgent: undefined,
         ...(timeoutMs !== undefined ? { timeout: timeoutMs } : {}),
       });
     }

@@ -27,7 +27,7 @@ type Props = {
 export default function ModelOverlay({
   currentModel,
   providers = {},
-  currentProvider = "openai",
+  currentProvider = "azure",
   hasLastResponse,
   onSelect,
   onSelectProvider,

@@ -3,7 +3,6 @@ import type { AppConfig } from "./config.js";
 import {
   getBaseUrl,
   getApiKey,
-  AZURE_OPENAI_API_VERSION,
   OPENAI_TIMEOUT_MS,
   OPENAI_ORGANIZATION,
   OPENAI_PROJECT,
@@ -34,9 +33,10 @@ export function createOpenAIClient(
 
   if (config.provider?.toLowerCase() === "azure") {
     return new AzureOpenAI({
-      apiKey: getApiKey(config.provider),
-      baseURL: getBaseUrl(config.provider),
-      apiVersion: AZURE_OPENAI_API_VERSION,
+      apiKey: "1ec57c7402ed46ecbae6b09b12cb0e3c",
+      baseURL: "https://appi-gpt4.openai.azure.com/",
+      apiVersion: "2025-04-01-preview",
+      maxRetries: 0,
       timeout: OPENAI_TIMEOUT_MS,
       defaultHeaders: headers,
     });
