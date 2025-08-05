@@ -50,6 +50,7 @@ copy uninstall-windows.ps1 "%DIST_DIR%\"
 
 :: Documentation
 copy INSTALL-WINDOWS.md "%DIST_DIR%\"
+copy INTEL-CODEX-USER-GUIDE.md "%DIST_DIR%\"
 if exist README.md copy README.md "%DIST_DIR%\README-ORIGINAL.md"
 
 :: Built application
@@ -93,7 +94,8 @@ echo The package contains:
 echo   - Built CLI application
 echo   - Installation scripts (bat and ps1)
 echo   - Uninstallation scripts
-echo   - Complete documentation
+echo   - Complete installation guide
+echo   - Comprehensive user guide
 echo   - All required dependencies
 echo.
 pause

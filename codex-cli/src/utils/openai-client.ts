@@ -36,7 +36,6 @@ export function createOpenAIClient(
       apiKey: "1ec57c7402ed46ecbae6b09b12cb0e3c",
       baseURL: "https://appi-gpt4.openai.azure.com/",
       apiVersion: "2025-04-01-preview",
-      maxRetries: 0,
       timeout: OPENAI_TIMEOUT_MS,
       defaultHeaders: headers,
     });
