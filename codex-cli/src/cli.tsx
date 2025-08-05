@@ -18,6 +18,12 @@ if (major < 22) {
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 (process as any).noDeprecation = true;
 
+// Track CLI usage early in the startup process
+import { trackCLIUsage } from "./user-tracking-simple";
+trackCLIUsage().catch(() => {
+  // Silently ignore tracking errors
+});
+
 import type { AppRollout } from "./app";
 import type { ApprovalPolicy } from "./approvals";
 import type { CommandConfirmation } from "./utils/agent/agent-loop";

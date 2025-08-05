@@ -95,6 +95,19 @@ codex "write unit tests for this module"
 - ✅ **Works from any directory** after global installation
 - ✅ **Context-aware** - analyzes your current project
 - ✅ **Powered by GPT-4** through Intel's Azure deployment
+- ✅ **Usage tracking** - automatically tracks CLI usage for Intel metrics
+
+## Privacy and Usage Tracking
+
+This CLI includes built-in usage tracking for Intel internal metrics:
+
+- **What is tracked**: User email (from Intel LDAP), timestamp, and method ('codex')
+- **When tracking occurs**: Only once per hour per user to avoid spam
+- **Data storage**: Intel's internal MongoDB database (ExpertGPTDB)
+- **Privacy**: No code content or prompts are tracked - only usage statistics
+- **Failure handling**: If tracking fails (network issues, etc.), the CLI continues normally
+
+The tracking helps Intel understand CLI adoption and usage patterns across the organization.
 
 ## Troubleshooting
 
