@@ -1,8 +1,8 @@
-# Intel Codex CLI - Complete Distribution Package
+# Intel ExpertGPT Codex CLI - Complete Distribution Package
 
 ## Summary
 
-Successfully created a complete Intel Codex CLI distribution package with:
+Successfully created a complete Intel ExpertGPT Codex CLI distribution package with:
 
 ### ✅ Core Functionality
 - **Hardcoded Azure OpenAI credentials** for Intel's internal endpoint

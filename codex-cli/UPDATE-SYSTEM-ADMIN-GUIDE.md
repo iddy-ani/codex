@@ -1,8 +1,8 @@
-# Intel Codex CLI - Update System Administration Guide
+# Intel ExpertGPT Codex CLI - Update System Administration Guide
 
 ## Overview
 
-The Intel Codex CLI includes an automatic update system that checks for updates on startup from a network share. This allows for centralized distribution of updates across the Intel organization.
+The Intel ExpertGPT Codex CLI includes an automatic update system that checks for updates on startup from a network share. This allows for centralized distribution of updates across the Intel organization.
 
 ## Network Share Setup
 
@@ -13,7 +13,7 @@ The Intel Codex CLI includes an automatic update system that checks for updates 
   - `update-info.json` (version metadata)
 
 ### Required Permissions
-- **Read Access**: All Intel engineers who use Codex CLI
+- **Read Access**: All Intel engineers who use ExpertGPT Codex CLI
 - **Write Access**: IT administrators who deploy updates
 
 ## Deploying Updates
@@ -236,4 +236,4 @@ Use semantic versioning (major.minor.patch):
 
 ---
 
-**For technical support or questions about the update system, contact the Intel Codex CLI administration team.**
+**For technical support or questions about the update system, contact the Intel ExpertGPT Codex CLI administration team.**

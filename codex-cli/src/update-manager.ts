@@ -75,7 +75,7 @@ class UpdateManager {
 
   private async promptUserForUpdate(updateInfo: UpdateInfo): Promise<boolean> {
     console.log('\n' + '='.repeat(60));
-    console.log('🚀 Intel Codex CLI Update Available!');
+    console.log('🚀 Intel ExpertGPT Codex CLI Update Available!');
     console.log('='.repeat(60));
     console.log(`Current version: ${this.currentVersion}`);
     console.log(`Latest version:  ${updateInfo.version}`);
@@ -201,7 +201,7 @@ class UpdateManager {
       );
 
       if (!codexDir) {
-        console.error('Could not find Codex CLI directory in update package');
+        console.error('Could not find ExpertGPT Codex CLI directory in update package');
         return false;
       }
 
@@ -259,7 +259,7 @@ class UpdateManager {
       const shouldUpdate = await this.promptUserForUpdate(updateInfo);
       if (!shouldUpdate) {
         if (updateInfo.required) {
-          console.log('\n⚠️  This update is required. Codex CLI will exit.');
+          console.log('\n⚠️  This update is required. ExpertGPT Codex CLI will exit.');
           process.exit(1);
         }
         return false;
@@ -268,7 +268,7 @@ class UpdateManager {
       // Download and install update
       const updateSuccess = await this.downloadAndInstall(updateInfo);
       if (updateSuccess && updateInfo.required) {
-        console.log('\nUpdate completed. Please restart Codex CLI.');
+        console.log('\nUpdate completed. Please restart ExpertGPT Codex CLI.');
         process.exit(0);
       }
 

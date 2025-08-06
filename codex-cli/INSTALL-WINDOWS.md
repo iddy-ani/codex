@@ -1,4 +1,4 @@
-# Intel Codex CLI - Windows Installation Guide
+# Intel ExpertGPT Codex CLI - Windows Installation Guide
 
 A powerful AI coding assistant CLI tool configured for Intel's internal Azure OpenAI service.
 
@@ -12,7 +12,7 @@ A powerful AI coding assistant CLI tool configured for Intel's internal Azure Op
 
 ### Method 1: Automated Installation (Recommended)
 
-1. **Download and extract** the Intel Codex CLI package
+1. **Download and extract** the Intel ExpertGPT Codex CLI package
 2. **Open Command Prompt or PowerShell as Administrator**
 3. **Navigate to the extracted folder**:
    ```cmd
@@ -138,7 +138,7 @@ The tracking helps Intel understand CLI adoption and usage patterns across the o
 
 ## Uninstallation
 
-To remove the Intel Codex CLI:
+To remove the Intel ExpertGPT Codex CLI:
 
 **For Command Prompt:**
 ```cmd
@@ -167,5 +167,5 @@ This CLI tool contains embedded credentials for Intel's internal Azure OpenAI se
 
 ---
 
-**Intel Codex CLI v1.0.0**  
+**Intel ExpertGPT Codex CLI v1.1.0**  
 *Powered by Azure OpenAI*

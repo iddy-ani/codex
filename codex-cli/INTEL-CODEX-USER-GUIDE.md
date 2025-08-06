@@ -1,8 +1,8 @@
-# Intel Codex CLI - User Guide
+# Intel ExpertGPT Codex CLI - User Guide
 
 ## Overview
 
-Intel Codex CLI is a powerful AI-powered coding assistant that runs directly in your terminal. Built on OpenAI's latest reasoning models, it can read, modify, and execute code on your local machine to help you build features faster, fix bugs, and understand complex codebases.
+Intel ExpertGPT Codex CLI is a powerful AI-powered coding assistant that runs directly in your terminal. Built on OpenAI's latest reasoning models, it can read, modify, and execute code on your local machine to help you build features faster, fix bugs, and understand complex codebases.
 
 **Key Benefits:**
 - 🚀 **Zero API key setup** - pre-configured for Intel's Azure OpenAI service
@@ -40,7 +40,7 @@ codex "add error handling to the main function"
 
 ## Approval Modes
 
-Intel Codex CLI offers three distinct approval modes to control how much autonomy you give the AI:
+Intel ExpertGPT Codex CLI offers three distinct approval modes to control how much autonomy you give the AI:
 
 | Mode | Command | What It Does | Best For |
 |------|---------|--------------|----------|
@@ -58,7 +58,7 @@ You can change modes anytime during a Codex session:
 
 ## Available Models
 
-Intel Codex CLI provides access to multiple AI models, each optimized for different use cases:
+Intel ExpertGPT Codex CLI provides access to multiple AI models, each optimized for different use cases:
 
 ### **Reasoning Models** (Recommended)
 - **o3** - Flagship multimodal reasoning model, excellent for complex coding tasks
@@ -98,7 +98,7 @@ codex --model gpt-4.1-nano "what does this variable do?"
 ## Authentication & API Keys
 
 ### Intel Network (Default)
-**No API key required!** Intel Codex CLI comes pre-configured with access to Intel's internal Azure OpenAI service. Just install and start using.
+**No API key required!** Intel ExpertGPT Codex CLI comes pre-configured with access to Intel's internal Azure OpenAI service. Just install and start using.
 
 ### Using Your Own OpenAI Account (Optional)
 If you prefer to use your personal OpenAI account:
@@ -339,6 +339,6 @@ codex --version # Show current version
 
 ---
 
-**Happy coding with Intel Codex CLI! 🚀**
+**Happy coding with Intel ExpertGPT Codex CLI! 🚀**
 
 *For technical support or questions, contact your Intel IT support team.*

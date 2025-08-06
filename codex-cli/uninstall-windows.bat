@@ -1,10 +1,10 @@
 @echo off
 echo ================================
-echo Intel Codex CLI Uninstallation
+echo Intel ExpertGPT Codex CLI Uninstallation
 echo ================================
 echo.
 
-echo Removing Intel Codex CLI...
+echo Removing Intel ExpertGPT Codex CLI...
 npm uninstall -g @intel/codex-cli
 
 if %ERRORLEVEL% neq 0 (

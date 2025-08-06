@@ -378,7 +378,7 @@ export default function TerminalChat({
             .trim();
           const preview = text.replace(/\n/g, " ").slice(0, 100);
           const safePreview = preview.replace(/"/g, '\\"');
-          const title = "Codex CLI";
+          const title = "ExpertGPT Codex CLI";
           const cwd = PWD;
           spawn("osascript", [
             "-e",

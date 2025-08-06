@@ -2,7 +2,7 @@
 setlocal enabledelayedexpansion
 
 echo ================================
-echo Intel Codex CLI Update Deployment
+echo Intel ExpertGPT Codex CLI Update Deployment
 echo ================================
 echo.
 
@@ -124,7 +124,7 @@ echo   - %NETWORK_SHARE%\update-info.json
 echo.
 echo Version deployed: !VERSION!
 echo.
-echo Users will be prompted to update when they next run Codex CLI.
+echo Users will be prompted to update when they next run ExpertGPT Codex CLI.
 echo To make an update required, edit update-info.json and set "required": true
 echo.
 pause

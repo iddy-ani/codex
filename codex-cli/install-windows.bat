@@ -1,6 +1,6 @@
 @echo off
 echo ================================
-echo Intel Codex CLI Installation
+echo Intel ExpertGPT Codex CLI Installation
 echo ================================
 echo.
 
@@ -36,7 +36,7 @@ echo Node.js version is compatible.
 echo.
 
 REM Install the CLI globally
-echo Installing Intel Codex CLI globally...
+echo Installing Intel ExpertGPT Codex CLI globally...
 echo Running: npm install -g .
 echo.
 

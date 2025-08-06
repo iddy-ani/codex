@@ -2,7 +2,7 @@
 setlocal enabledelayedexpansion
 
 echo ================================
-echo Creating Intel Codex CLI Distribution Package
+echo Creating Intel ExpertGPT Codex CLI Distribution Package
 echo ================================
 echo.
 
@@ -72,10 +72,10 @@ popd
 :: Create a simple start script
 echo @echo off > "%DIST_DIR%\QUICK-INSTALL.bat"
 echo echo ================================ >> "%DIST_DIR%\QUICK-INSTALL.bat"
-echo echo Intel Codex CLI Quick Install >> "%DIST_DIR%\QUICK-INSTALL.bat"
+echo echo Intel ExpertGPT Codex CLI Quick Install >> "%DIST_DIR%\QUICK-INSTALL.bat"
 echo echo ================================ >> "%DIST_DIR%\QUICK-INSTALL.bat"
 echo echo. >> "%DIST_DIR%\QUICK-INSTALL.bat"
-echo echo This will install the Intel Codex CLI globally on your system. >> "%DIST_DIR%\QUICK-INSTALL.bat"
+echo echo This will install the Intel ExpertGPT Codex CLI globally on your system. >> "%DIST_DIR%\QUICK-INSTALL.bat"
 echo echo. >> "%DIST_DIR%\QUICK-INSTALL.bat"
 echo pause >> "%DIST_DIR%\QUICK-INSTALL.bat"
 echo call install-windows.bat >> "%DIST_DIR%\QUICK-INSTALL.bat"

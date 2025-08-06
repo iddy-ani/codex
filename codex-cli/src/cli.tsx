@@ -7,7 +7,7 @@ if (major < 22) {
   // eslint-disable-next-line no-console
   console.error(
     "\n" +
-      "Codex CLI requires Node.js version 22 or newer.\n" +
+      "ExpertGPT Codex CLI requires Node.js version 22 or newer.\n" +
       `You are running Node.js v${process.versions.node}.\n` +
       "Please upgrade Node.js: https://nodejs.org/en/download/\n",
   );

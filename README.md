@@ -1,9 +1,9 @@
-<h1 align="center">OpenAI Codex CLI</h1>
+<h1 align="center">ExpertGPT Codex CLI</h1>
 <p align="center">Lightweight coding agent that runs in your terminal</p>
 
 <p align="center"><code>npm i -g @openai/codex</code><br />or <code>brew install codex</code></p>
 
-This is the home of the **Codex CLI**, which is a coding agent from OpenAI that runs locally on your computer. If you are looking for the _cloud-based agent_ from OpenAI, **Codex [Web]**, see <https://chatgpt.com/codex>.
+This is the home of the **ExpertGPT Codex CLI**, which is a coding agent that runs locally on your computer.
 
 <!-- ![Codex demo GIF using: codex "explain this codebase to me"](./.github/demo.gif) -->
 
@@ -55,7 +55,7 @@ This is the home of the **Codex CLI**, which is a coding agent from OpenAI that 
 
 ## Experimental technology disclaimer
 
-Codex CLI is an experimental project under active development. It is not yet stable, may contain bugs, incomplete features, or undergo breaking changes. We're building it in the open with the community and welcome:
+ExpertGPT Codex CLI is an experimental project under active development. It is not yet stable, may contain bugs, incomplete features, or undergo breaking changes. We're building it in the open with the community and welcome:
 
 - Bug reports
 - Feature requests
@@ -188,7 +188,7 @@ they'll be committed to your working directory.
 
 ## Why Codex?
 
-Codex CLI is built for developers who already **live in the terminal** and want
+ExpertGPT Codex CLI is built for developers who already **live in the terminal** and want
 ChatGPT-level reasoning **plus** the power to actually run code, manipulate
 files, and iterate - all under version control. In short, it's _chat-driven
 development_ that understands and executes your repo.
@@ -281,7 +281,7 @@ Run Codex head-less in pipelines. Example GitHub Action step:
 
 ## Model Context Protocol (MCP)
 
-The Codex CLI can be configured to leverage MCP servers by defining an [`mcp_servers`](./codex-rs/config.md#mcp_servers) section in `~/.codex/config.toml`. It is intended to mirror how tools such as Claude and Cursor define `mcpServers` in their respective JSON config files, though the Codex format is slightly different since it uses TOML rather than JSON, e.g.:
+The ExpertGPT Codex CLI can be configured to leverage MCP servers by defining an [`mcp_servers`](./codex-rs/config.md#mcp_servers) section in `~/.codex/config.toml`. It is intended to mirror how tools such as Claude and Cursor define `mcpServers` in their respective JSON config files, though the ExpertGPT Codex format is slightly different since it uses TOML rather than JSON, e.g.:
 
 ```toml
 # IMPORTANT: the top-level key is `mcp_servers` rather than `mcpServers`.
@@ -292,7 +292,7 @@ env = { "API_KEY" = "value" }
 ```
 
 > [!TIP]
-> It is somewhat experimental, but the Codex CLI can also be run as an MCP _server_ via `codex mcp`. If you launch it with an MCP client such as `npx @modelcontextprotocol/inspector codex mcp` and send it a `tools/list` request, you will see that there is only one tool, `codex`, that accepts a grab-bag of inputs, including a catch-all `config` map for anything you might want to override. Feel free to play around with it and provide feedback via GitHub issues.
+> It is somewhat experimental, but the ExpertGPT Codex CLI can also be run as an MCP _server_ via `codex mcp`. If you launch it with an MCP client such as `npx @modelcontextprotocol/inspector codex mcp` and send it a `tools/list` request, you will see that there is only one tool, `codex`, that accepts a grab-bag of inputs, including a catch-all `config` map for anything you might want to override. Feel free to play around with it and provide feedback via GitHub issues.
 
 ## Tracing / verbose logging
 
@@ -329,7 +329,7 @@ Below are a few bite-size examples you can copy-paste. Replace the text in quote
 ## Installation
 
 <details open>
-<summary><strong>Install Codex CLI using your preferred package manager.</strong></summary>
+<summary><strong>Install ExpertGPT Codex CLI using your preferred package manager.</strong></summary>
 
 From `brew` (recommended, downloads only the binary for your platform):
 
@@ -358,7 +358,7 @@ Each archive contains a single entry with the platform baked into the name (e.g.
 
 ### DotSlash
 
-The GitHub Release also contains a [DotSlash](https://dotslash-cli.com/) file for the Codex CLI named `codex`. Using a DotSlash file makes it possible to make a lightweight commit to source control to ensure all contributors use the same version of an executable, regardless of what platform they use for development.
+The GitHub Release also contains a [DotSlash](https://dotslash-cli.com/) file for the ExpertGPT Codex CLI named `codex`. Using a DotSlash file makes it possible to make a lightweight commit to source control to ensure all contributors use the same version of an executable, regardless of what platform they use for development.
 
 </details>
 
@@ -409,7 +409,7 @@ Though `--config` can be used to set/override ad-hoc config values for individua
 <details>
 <summary>OpenAI released a model called Codex in 2021 - is this related?</summary>
 
-In 2021, OpenAI released Codex, an AI system designed to generate code from natural language prompts. That original Codex model was deprecated as of March 2023 and is separate from the CLI tool.
+In 2021, OpenAI released Codex, an AI system designed to generate code from natural language prompts. That original Codex model was deprecated as of March 2023 and is separate from the ExpertGPT CLI tool.
 
 </details>
 
@@ -443,7 +443,7 @@ Not directly. It requires [Windows Subsystem for Linux (WSL2)](https://learn.mic
 
 ## Zero data retention (ZDR) usage
 
-Codex CLI **does** support OpenAI organizations with [Zero Data Retention (ZDR)](https://platform.openai.com/docs/guides/your-data#zero-data-retention) enabled. If your OpenAI organization has Zero Data Retention enabled and you still encounter errors such as:
+ExpertGPT Codex CLI **does** support OpenAI organizations with [Zero Data Retention (ZDR)](https://platform.openai.com/docs/guides/your-data#zero-data-retention) enabled. If your OpenAI organization has Zero Data Retention enabled and you still encounter errors such as:
 
 ```
 OpenAI rejected the request. Error details: Status: 400, Code: unsupported_parameter, Type: invalid_request_error, Message: 400 Previous response cannot be used for this organization due to Zero Data Retention.
@@ -461,7 +461,7 @@ See [the configuration documentation on `disable_response_storage`](./codex-rs/c
 
 ## Codex open source fund
 
-We're excited to launch a **$1 million initiative** supporting open source projects that use Codex CLI and other OpenAI models.
+We're excited to launch a **$1 million initiative** supporting open source projects that use ExpertGPT Codex CLI and other OpenAI models.
 
 - Grants are awarded up to **$25,000** API credits.
 - Applications are reviewed **on a rolling basis**.
@@ -512,7 +512,7 @@ More broadly we welcome contributions - whether you are opening your very first 
 
 If you run into problems setting up the project, would like feedback on an idea, or just want to say _hi_ - please open a Discussion or jump into the relevant issue. We are happy to help.
 
-Together we can make Codex CLI an incredible tool. **Happy hacking!** :rocket:
+Together we can make ExpertGPT Codex CLI an incredible tool. **Happy hacking!** :rocket:
 
 ### Contributor license agreement (CLA)
 
