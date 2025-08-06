@@ -38,6 +38,57 @@ codex "add error handling to the main function"
 
 ---
 
+## Automatic Updates
+
+Intel ExpertGPT Codex CLI includes an automatic update system that ensures you always have the latest features and improvements.
+
+### How It Works
+- **Automatic Check**: Every time you start Codex, it checks for updates from Intel's network share
+- **No Interruption**: Update checks happen in the background and don't delay your work
+- **User Choice**: You'll be prompted before any updates are installed
+- **Zero Downtime**: Updates install quickly and you can continue working immediately
+
+### Update Process
+```cmd
+# When you start Codex, you might see:
+🚀 Intel ExpertGPT Codex CLI Update Available!
+Version 1.2.0 is available (you have 1.1.0)
+
+Would you like to update now? (y/n): y
+
+# Update installs automatically
+✅ Update completed. Please restart ExpertGPT Codex CLI.
+```
+
+### Update Options
+- **Install Now**: Type `y` to update immediately
+- **Skip This Time**: Type `n` to continue with current version
+- **Skip Version**: Type `s` to permanently skip this version
+
+### What Gets Updated
+- New AI models and capabilities
+- Performance improvements
+- Bug fixes and stability improvements
+- New features and command options
+- Security patches
+
+### Network Requirements
+Updates are distributed through Intel's internal network share (`\\IREGPT1\Codex`). This ensures:
+- ✅ Fast download speeds within Intel network
+- ✅ No external internet dependency
+- ✅ Centralized version management
+- ✅ Corporate security compliance
+
+### Manual Update Check
+```cmd
+# Force check for updates (if available in your version)
+codex --check-updates
+```
+
+**Note**: Updates are managed by the ExpertGPT team. If you experience issues with updates, contact expertgpt@intel.com for support.
+
+---
+
 ## Approval Modes
 
 Intel ExpertGPT Codex CLI offers three distinct approval modes to control how much autonomy you give the AI:
@@ -211,6 +262,19 @@ cd path\to\intel-codex-cli-windows
 npm install -g .
 ```
 
+### Update Issues
+```cmd
+# Check current version
+codex --version
+
+# If updates fail, try manual reinstallation:
+# 1. Download latest package from \\IREGPT1\Codex
+# 2. Extract and run install-windows.bat as Administrator
+# 3. Restart your terminal
+
+# Contact IT support if update system is not working
+```
+
 ### Performance Issues
 ```cmd
 # Use faster models for simple tasks
@@ -256,6 +320,12 @@ codex "start over with a simpler approach"
 - Always work in a Git repository
 - Commit your work before major Codex sessions
 - Review Codex's changes before committing
+
+### Staying Updated
+- Accept updates when prompted to get latest features
+- Check release notes for new capabilities
+- Report any issues to IT support after updates
+- Keep your work saved before accepting updates
 
 ---
 
