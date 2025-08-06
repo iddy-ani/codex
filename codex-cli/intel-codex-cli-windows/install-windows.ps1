@@ -1,8 +1,8 @@
-# Intel Codex CLI Installation Script
+# Intel ExpertGPT Codex CLI Installation Script
 # PowerShell version
 
 Write-Host "================================" -ForegroundColor Green
-Write-Host "Intel Codex CLI Installation" -ForegroundColor Green  
+Write-Host "Intel ExpertGPT Codex CLI Installation" -ForegroundColor Green  
 Write-Host "================================" -ForegroundColor Green
 Write-Host ""
 
@@ -36,7 +36,7 @@ Write-Host "Node.js version is compatible." -ForegroundColor Green
 Write-Host ""
 
 # Install the CLI globally
-Write-Host "Installing Intel Codex CLI globally..." -ForegroundColor Yellow
+Write-Host "Installing Intel ExpertGPT Codex CLI globally..." -ForegroundColor Yellow
 Write-Host "Running: npm install -g ." -ForegroundColor Gray
 Write-Host ""
 
