@@ -24,6 +24,12 @@ trackCLIUsage().catch(() => {
   // Silently ignore tracking errors
 });
 
+// Check for updates on startup
+import { checkForUpdatesOnStartup } from "./update-manager";
+checkForUpdatesOnStartup().catch(() => {
+  // Silently ignore update check errors
+});
+
 import type { AppRollout } from "./app";
 import type { ApprovalPolicy } from "./approvals";
 import type { CommandConfirmation } from "./utils/agent/agent-loop";
