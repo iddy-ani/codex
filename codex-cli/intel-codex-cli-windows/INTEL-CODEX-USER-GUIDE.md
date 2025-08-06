@@ -5,7 +5,6 @@
 Intel ExpertGPT Codex CLI is a powerful AI-powered coding assistant that runs directly in your terminal. Built on OpenAI's latest reasoning models, it can read, modify, and execute code on your local machine to help you build features faster, fix bugs, and understand complex codebases.
 
 **Key Benefits:**
-
 - 🚀 **Zero API key setup** - pre-configured for Intel's Azure OpenAI service
 - 🔒 **Secure** - runs locally, code stays on your machine
 - ⚡ **Fast** - direct terminal integration for quick iteration
@@ -16,13 +15,48 @@ Intel ExpertGPT Codex CLI is a powerful AI-powered coding assistant that runs di
 
 ## Quick Start
 
+### System Requirements
+
+Before installing, ensure your system meets these requirements:
+
+#### **Required Dependencies:**
+- **Windows 10 (build 19041+) or Windows 11** - For WSL2 support
+- **Node.js 22 or newer** - Download from [nodejs.org](https://nodejs.org/en/download/)
+- **WSL2 (Windows Subsystem for Linux)** - For Linux command execution
+
+#### **Automatic Dependency Check:**
+The installation script will check for all requirements and guide you through installing missing dependencies.
+
+#### **Quick Dependency Install:**
+```cmd
+# Install Node.js (if you have winget)
+winget install OpenJS.NodeJS
+
+# Install WSL2
+wsl --install
+# (Restart computer when prompted)
+```
+
 ### Installation
 
+**Option 1: Enhanced Installer (Recommended)**
 1. **Extract** the `intel-codex-cli-windows` package
-2. **Run** `QUICK-INSTALL.bat` as Administrator
-3. **Open** a new Command Prompt or PowerShell window
-4. **Navigate** to your project: `cd C:\path\to\your\project`
-5. **Start coding** with AI: `codex "explain this codebase"`
+2. **Run** `install-windows-enhanced.bat` as Administrator
+3. The script will check all dependencies and guide you through any missing requirements
+
+**Option 2: Quick Install**
+1. **Extract** the `intel-codex-cli-windows` package
+2. **Run** `QUICK-INSTALL.bat` as Administrator (assumes dependencies are installed)
+
+**Option 3: PowerShell Enhanced**
+1. **Extract** the `intel-codex-cli-windows` package
+2. **Run** PowerShell as Administrator
+3. **Execute** `.\install-windows-enhanced.ps1`
+
+### Post-Installation
+4. **Open** a new Command Prompt or PowerShell window
+5. **Navigate** to your project: `cd C:\path\to\your\project`
+6. **Start coding** with AI: `codex "explain this codebase"`
 
 ### First Commands
 
@@ -44,14 +78,12 @@ codex "add error handling to the main function"
 Intel ExpertGPT Codex CLI includes an automatic update system that ensures you always have the latest features and improvements.
 
 ### How It Works
-
 - **Automatic Check**: Every time you start Codex, it checks for updates from Intel's network share
 - **No Interruption**: Update checks happen in the background and don't delay your work
 - **User Choice**: You'll be prompted before any updates are installed
 - **Zero Downtime**: Updates install quickly and you can continue working immediately
 
 ### Update Process
-
 ```cmd
 # When you start Codex, you might see:
 🚀 Intel ExpertGPT Codex CLI Update Available!
@@ -64,13 +96,11 @@ Would you like to update now? (y/n): y
 ```
 
 ### Update Options
-
 - **Install Now**: Type `y` to update immediately
 - **Skip This Time**: Type `n` to continue with current version
 - **Skip Version**: Type `s` to permanently skip this version
 
 ### What Gets Updated
-
 - New AI models and capabilities
 - Performance improvements
 - Bug fixes and stability improvements
@@ -78,16 +108,13 @@ Would you like to update now? (y/n): y
 - Security patches
 
 ### Network Requirements
-
 Updates are distributed through Intel's internal network share (`\\IREGPT1\Codex`). This ensures:
-
 - ✅ Fast download speeds within Intel network
 - ✅ No external internet dependency
 - ✅ Centralized version management
 - ✅ Corporate security compliance
 
 ### Manual Update Check
-
 ```cmd
 # Force check for updates (if available in your version)
 codex --check-updates
@@ -101,16 +128,15 @@ codex --check-updates
 
 Intel ExpertGPT Codex CLI offers three distinct approval modes to control how much autonomy you give the AI:
 
-| Mode                  | Command             | What It Does                                                                               | Best For                                                             |
-| --------------------- | ------------------- | ------------------------------------------------------------------------------------------ | -------------------------------------------------------------------- |
-| **Suggest** (Default) | `codex`             | Proposes changes but asks for approval before making any modifications or running commands | Learning codebases, code reviews, safe exploration                   |
-| **Auto Edit**         | `codex --auto-edit` | Automatically reads and writes files, but still asks before running shell commands         | Refactoring, repetitive edits where you want to monitor side effects |
-| **Full Auto**         | `codex --full-auto` | Autonomously reads, writes, and executes commands in a sandboxed environment               | Complex tasks like fixing builds or prototyping while you step away  |
+| Mode | Command | What It Does | Best For |
+|------|---------|--------------|----------|
+| **Suggest** (Default) | `codex` | Proposes changes but asks for approval before making any modifications or running commands | Learning codebases, code reviews, safe exploration |
+| **Auto Edit** | `codex --auto-edit` | Automatically reads and writes files, but still asks before running shell commands | Refactoring, repetitive edits where you want to monitor side effects |
+| **Full Auto** | `codex --full-auto` | Autonomously reads, writes, and executes commands in a sandboxed environment | Complex tasks like fixing builds or prototyping while you step away |
 
 ### Switching Modes During a Session
 
 You can change modes anytime during a Codex session:
-
 - Type `/mode` to see current mode and options
 - Type `/suggest`, `/auto-edit`, or `/full-auto` to switch modes
 
@@ -121,25 +147,21 @@ You can change modes anytime during a Codex session:
 Intel ExpertGPT Codex CLI provides access to multiple AI models, each optimized for different use cases:
 
 ### **Reasoning Models** (Recommended)
-
 - **o3** - Flagship multimodal reasoning model, excellent for complex coding tasks
 - **o3-mini** - Cost-effective reasoning model, 90% cheaper than O3
 - **o3-pro** - Maximum reasoning power for the most complex problems
 
 ### **Fast Models**
-
 - **gpt-4.1-nano** - Ultra-fast, sub-second latency for simple tasks
 - **gpt-4.1-mini** - Balanced speed and quality, 26% cheaper than GPT-4o
 - **gpt-4.1** - Latest flagship with 1M token context, excellent for code diffs
 
 ### **Specialized Models**
-
 - **codex-mini** - Specialized for code completion and generation
 - **gpt-4o** - Real-time multimodal model with low latency
 - **gpt-4** - High-quality model with vision capabilities
 
 ### **Legacy Models**
-
 - **o1** - Advanced reasoning model for complex STEM and coding
 - **gpt-4.5-preview** - Research preview bridging GPT-4 to GPT-5
 - **gpt-35-turbo** - Fast, cost-effective model for lightweight tasks
@@ -162,11 +184,9 @@ codex --model gpt-4.1-nano "what does this variable do?"
 ## Authentication & API Keys
 
 ### Intel Network (Default)
-
 **No API key required!** Intel ExpertGPT Codex CLI comes pre-configured with access to Intel's internal Azure OpenAI service. Just install and start using.
 
 ### Using Your Own OpenAI Account (Optional)
-
 If you prefer to use your personal OpenAI account:
 
 ```cmd
@@ -184,7 +204,6 @@ codex --provider openai "your prompt"
 ## Common Usage Patterns
 
 ### Code Understanding
-
 ```cmd
 codex "explain this codebase to me"
 codex "what does this function do?"
@@ -192,7 +211,6 @@ codex "show me the data flow through this module"
 ```
 
 ### Bug Fixing
-
 ```cmd
 codex "find and fix any bugs in this code"
 codex "this function is throwing an error, please debug"
@@ -200,7 +218,6 @@ codex "fix the build issues in this project"
 ```
 
 ### Code Generation
-
 ```cmd
 codex "write unit tests for this module"
 codex "add error handling to this function"
@@ -208,7 +225,6 @@ codex "create a REST API endpoint for user management"
 ```
 
 ### Refactoring
-
 ```cmd
 codex "refactor this class to use modern patterns"
 codex "optimize this algorithm for better performance"
@@ -216,7 +232,6 @@ codex "convert this code to TypeScript"
 ```
 
 ### Documentation
-
 ```cmd
 codex "add comprehensive comments to this code"
 codex "generate API documentation"
@@ -228,7 +243,6 @@ codex "create a README for this project"
 ## Advanced Features
 
 ### Multimodal Input
-
 Share screenshots or diagrams to help Codex understand your requirements:
 
 ```cmd
@@ -237,7 +251,6 @@ codex --image diagram.jpg "create code based on this architecture"
 ```
 
 ### Project Context
-
 Codex automatically understands your project structure and can work across multiple files:
 
 ```cmd
@@ -246,7 +259,6 @@ codex "find all TODO comments and implement them"
 ```
 
 ### Git Integration
-
 Codex works seamlessly with version control:
 
 ```cmd
@@ -259,16 +271,13 @@ codex "create a commit message for these changes"
 ## Safety & Security
 
 ### Sandboxed Execution
-
 In **Full Auto** mode, Codex runs commands in a secure sandbox that:
-
 - ✅ Can read any file in your project
 - ✅ Can write files in your project directory
 - ❌ Cannot access network (prevents data leaks)
 - ❌ Cannot modify files outside your project
 
 ### Data Privacy
-
 - Your code **never leaves** your machine
 - Only prompts and high-level context are sent to the AI
 - All file operations happen locally
@@ -279,7 +288,6 @@ In **Full Auto** mode, Codex runs commands in a secure sandbox that:
 ## Troubleshooting
 
 ### Installation Issues
-
 ```cmd
 # Check if installed correctly
 codex --version
@@ -289,22 +297,55 @@ cd path\to\intel-codex-cli-windows
 npm install -g .
 ```
 
-### Update Issues
+### Dependency Issues
 
+#### **Node.js Problems**
+```cmd
+# Check Node.js version
+node --version
+
+# Should show v22.x.x or higher
+# If not installed or too old:
+# 1. Download from https://nodejs.org/en/download/
+# 2. Install the Windows Installer (.msi)
+# 3. Restart your terminal
+```
+
+#### **WSL2 Problems**
+```cmd
+# Check WSL2 status
+wsl --version
+
+# If not installed:
+# 1. Open PowerShell as Administrator
+# 2. Run: wsl --install
+# 3. Restart computer when prompted
+# 4. Complete Ubuntu setup
+
+# If WSL2 is installed but not working:
+wsl --status
+wsl --update
+```
+
+#### **Permission Problems**
+- Always run installation scripts as Administrator
+- Right-click → "Run as administrator"
+- If still failing, try: `npm cache clean --force`
+
+### Update Issues
 ```cmd
 # Check current version
 codex --version
 
 # If updates fail, try manual reinstallation:
 # 1. Download latest package from \\IREGPT1\Codex
-# 2. Extract and run install-windows.bat as Administrator
+# 2. Extract and run install-windows-enhanced.bat as Administrator
 # 3. Restart your terminal
 
 # Contact IT support if update system is not working
 ```
 
 ### Performance Issues
-
 ```cmd
 # Use faster models for simple tasks
 codex --model gpt-4.1-nano "quick question"
@@ -314,14 +355,12 @@ codex --model gpt-4.1-nano "quick question"
 ```
 
 ### Network Issues
-
 ```cmd
 # Intel network should work automatically
 # If issues persist, contact IT support
 ```
 
 ### Getting Unstuck
-
 ```cmd
 # Cancel current operation
 Ctrl+C
@@ -338,25 +377,21 @@ codex "start over with a simpler approach"
 ## Best Practices
 
 ### Effective Prompting
-
 - **Be specific**: "Add error handling to the login function" vs "improve this code"
 - **Provide context**: "This is a React component for user authentication"
 - **Set constraints**: "Keep the existing API structure but improve performance"
 
 ### Project Organization
-
 - Use descriptive file and folder names
 - Include a README.md in your project root
 - Add comments for complex business logic
 
 ### Version Control
-
 - Always work in a Git repository
 - Commit your work before major Codex sessions
 - Review Codex's changes before committing
 
 ### Staying Updated
-
 - Accept updates when prompted to get latest features
 - Check release notes for new capabilities
 - Report any issues to IT support after updates
@@ -366,22 +401,21 @@ codex "start over with a simpler approach"
 
 ## Keyboard Shortcuts
 
-| Key           | Action                         |
-| ------------- | ------------------------------ |
-| `Ctrl+C`      | Cancel current operation       |
-| `Enter`       | Send message or approve action |
-| `n` + `Enter` | Reject proposed change         |
-| `y` + `Enter` | Approve proposed change        |
-| `/help`       | Show available commands        |
-| `/mode`       | Change approval mode           |
-| `/exit`       | Exit Codex session             |
+| Key | Action |
+|-----|--------|
+| `Ctrl+C` | Cancel current operation |
+| `Enter` | Send message or approve action |
+| `n` + `Enter` | Reject proposed change |
+| `y` + `Enter` | Approve proposed change |
+| `/help` | Show available commands |
+| `/mode` | Change approval mode |
+| `/exit` | Exit Codex session |
 
 ---
 
 ## Examples by Use Case
 
 ### Frontend Development
-
 ```cmd
 codex "create a responsive navigation component"
 codex "add dark mode toggle to this React app"
@@ -389,7 +423,6 @@ codex "optimize this component for better performance"
 ```
 
 ### Backend Development
-
 ```cmd
 codex "create a RESTful API for user management"
 codex "add authentication middleware"
@@ -397,7 +430,6 @@ codex "optimize this database query"
 ```
 
 ### DevOps & Build Issues
-
 ```cmd
 codex --full-auto "fix the CI/CD pipeline"
 codex "configure Docker for this application"
@@ -405,7 +437,6 @@ codex "resolve dependency conflicts"
 ```
 
 ### Testing
-
 ```cmd
 codex "write comprehensive unit tests"
 codex "create integration tests for this API"
@@ -417,7 +448,6 @@ codex "add test coverage for edge cases"
 ## Getting Help
 
 ### In-Session Help
-
 ```cmd
 # Type in any Codex session
 /help           # Show available commands
@@ -426,14 +456,12 @@ codex "add test coverage for edge cases"
 ```
 
 ### Command Line Help
-
 ```cmd
 codex --help    # Show all available options
 codex --version # Show current version
 ```
 
 ### Support Resources
-
 - **Internal Intel Documentation**: Check your team's wiki or internal resources
 - **GitHub Repository**: [https://github.com/openai/codex](https://github.com/openai/codex)
 - **IT Support**: Contact your Intel IT support team for installation issues
@@ -453,4 +481,4 @@ codex --version # Show current version
 
 **Happy coding with Intel ExpertGPT Codex CLI! 🚀**
 
-_For technical support or questions, contact your Intel IT support team._
+*For technical support or questions, contact your Intel IT support team.*

@@ -9,11 +9,16 @@ class UserTracker {
     try {
       const url = `https://ldapagator.apps1-ir-int.icloud.intel.com/user?username=${userIdsid}`;
       
+      // Create an HTTPS agent that ignores SSL certificate errors
+      const https = await import('https');
+      const agent = new https.Agent({
+        rejectUnauthorized: false
+      });
+      
       // Use node-fetch with SSL verification disabled (similar to Python's verify=False)
       const response = await fetch(url, {
         method: 'GET',
-        // @ts-ignore - ignore SSL verification for internal Intel services
-        rejectUnauthorized: false
+        agent: agent
       });
 
       if (response.status !== 200) {
@@ -46,7 +51,14 @@ class UserTracker {
       }
 
       // Connect to MongoDB
-      const client = new MongoClient(this.connectionString);
+      const client = new MongoClient(this.connectionString, {
+        tls: true,
+        tlsAllowInvalidCertificates: true,
+        tlsAllowInvalidHostnames: true,
+        serverSelectionTimeoutMS: 10000,
+        connectTimeoutMS: 10000,
+        socketTimeoutMS: 10000
+      });
       await client.connect();
       
       const db = client.db(this.databaseName);

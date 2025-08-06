@@ -19,15 +19,13 @@ A powerful AI coding assistant CLI tool configured for Intel's internal Azure Op
    cd "C:\path\to\codex-cli"
    ```
 4. **Run the installation script**:
-
+   
    **For Command Prompt:**
-
    ```cmd
    install-windows.bat
    ```
-
+   
    **For PowerShell:**
-
    ```powershell
    .\install-windows.ps1
    ```
@@ -35,7 +33,6 @@ A powerful AI coding assistant CLI tool configured for Intel's internal Azure Op
 ### Method 2: Manual Installation
 
 1. **Ensure Node.js 22+ is installed**:
-
    - Download from: https://nodejs.org/
    - Verify installation: `node --version`
 
@@ -62,7 +59,6 @@ After installation, verify the CLI is working:
 The CLI can be used from any directory on your system:
 
 ### Basic Usage
-
 ```cmd
 # Navigate to your project directory
 cd "C:\path\to\your\project"
@@ -72,7 +68,6 @@ codex "explain this codebase"
 ```
 
 ### Example Commands
-
 ```cmd
 # Get code explanations
 codex "what does this function do?"
@@ -119,30 +114,25 @@ The tracking helps Intel understand CLI adoption and usage patterns across the o
 ### Installation Issues
 
 **Error: "Node.js not found"**
-
 - Install Node.js 22+ from https://nodejs.org/
 - Restart your terminal after installation
 
 **Error: "Permission denied"**
-
 - Run the installation script as Administrator
 - Or use: `npm install -g . --unsafe-perm`
 
 **Error: "npm command not found"**
-
 - Node.js installation may be incomplete
 - Reinstall Node.js and restart your terminal
 
 ### Usage Issues
 
 **Error: "codex command not found"**
-
 - Close and reopen your terminal after installation
 - Verify global npm bin directory is in your PATH
 - Run: `npm list -g @intel/codex-cli` to verify installation
 
 **Error: Network or API issues**
-
 - Ensure you're connected to Intel's corporate network
 - If using VPN, ensure it allows access to internal Azure services
 
@@ -151,19 +141,16 @@ The tracking helps Intel understand CLI adoption and usage patterns across the o
 To remove the Intel ExpertGPT Codex CLI:
 
 **For Command Prompt:**
-
 ```cmd
 uninstall-windows.bat
 ```
 
 **For PowerShell:**
-
 ```powershell
 .\uninstall-windows.ps1
 ```
 
 **Or manually:**
-
 ```cmd
 npm uninstall -g @intel/codex-cli
 ```
@@ -171,7 +158,6 @@ npm uninstall -g @intel/codex-cli
 ## Support
 
 For technical support or questions:
-
 - Contact your Intel IT support team
 - Check internal documentation for additional resources
 
@@ -182,4 +168,4 @@ This CLI tool contains embedded credentials for Intel's internal Azure OpenAI se
 ---
 
 **Intel ExpertGPT Codex CLI v1.1.0**  
-_Powered by Azure OpenAI_
+*Powered by Azure OpenAI*

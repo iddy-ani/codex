@@ -45,6 +45,8 @@ if exist yarn.lock copy yarn.lock "%DIST_DIR%\"
 :: Installation scripts
 copy install-windows.bat "%DIST_DIR%\"
 copy install-windows.ps1 "%DIST_DIR%\"
+copy install-windows-enhanced.bat "%DIST_DIR%\"
+copy install-windows-enhanced.ps1 "%DIST_DIR%\"
 copy uninstall-windows.bat "%DIST_DIR%\"
 copy uninstall-windows.ps1 "%DIST_DIR%\"
 

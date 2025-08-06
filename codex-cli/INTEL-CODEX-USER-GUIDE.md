@@ -15,13 +15,48 @@ Intel ExpertGPT Codex CLI is a powerful AI-powered coding assistant that runs di
 
 ## Quick Start
 
+### System Requirements
+
+Before installing, ensure your system meets these requirements:
+
+#### **Required Dependencies:**
+- **Windows 10 (build 19041+) or Windows 11** - For WSL2 support
+- **Node.js 22 or newer** - Download from [nodejs.org](https://nodejs.org/en/download/)
+- **WSL2 (Windows Subsystem for Linux)** - For Linux command execution
+
+#### **Automatic Dependency Check:**
+The installation script will check for all requirements and guide you through installing missing dependencies.
+
+#### **Quick Dependency Install:**
+```cmd
+# Install Node.js (if you have winget)
+winget install OpenJS.NodeJS
+
+# Install WSL2
+wsl --install
+# (Restart computer when prompted)
+```
+
 ### Installation
 
+**Option 1: Enhanced Installer (Recommended)**
 1. **Extract** the `intel-codex-cli-windows` package
-2. **Run** `QUICK-INSTALL.bat` as Administrator
-3. **Open** a new Command Prompt or PowerShell window
-4. **Navigate** to your project: `cd C:\path\to\your\project`
-5. **Start coding** with AI: `codex "explain this codebase"`
+2. **Run** `install-windows-enhanced.bat` as Administrator
+3. The script will check all dependencies and guide you through any missing requirements
+
+**Option 2: Quick Install**
+1. **Extract** the `intel-codex-cli-windows` package
+2. **Run** `QUICK-INSTALL.bat` as Administrator (assumes dependencies are installed)
+
+**Option 3: PowerShell Enhanced**
+1. **Extract** the `intel-codex-cli-windows` package
+2. **Run** PowerShell as Administrator
+3. **Execute** `.\install-windows-enhanced.ps1`
+
+### Post-Installation
+4. **Open** a new Command Prompt or PowerShell window
+5. **Navigate** to your project: `cd C:\path\to\your\project`
+6. **Start coding** with AI: `codex "explain this codebase"`
 
 ### First Commands
 
@@ -262,6 +297,41 @@ cd path\to\intel-codex-cli-windows
 npm install -g .
 ```
 
+### Dependency Issues
+
+#### **Node.js Problems**
+```cmd
+# Check Node.js version
+node --version
+
+# Should show v22.x.x or higher
+# If not installed or too old:
+# 1. Download from https://nodejs.org/en/download/
+# 2. Install the Windows Installer (.msi)
+# 3. Restart your terminal
+```
+
+#### **WSL2 Problems**
+```cmd
+# Check WSL2 status
+wsl --version
+
+# If not installed:
+# 1. Open PowerShell as Administrator
+# 2. Run: wsl --install
+# 3. Restart computer when prompted
+# 4. Complete Ubuntu setup
+
+# If WSL2 is installed but not working:
+wsl --status
+wsl --update
+```
+
+#### **Permission Problems**
+- Always run installation scripts as Administrator
+- Right-click → "Run as administrator"
+- If still failing, try: `npm cache clean --force`
+
 ### Update Issues
 ```cmd
 # Check current version
@@ -269,7 +339,7 @@ codex --version
 
 # If updates fail, try manual reinstallation:
 # 1. Download latest package from \\IREGPT1\Codex
-# 2. Extract and run install-windows.bat as Administrator
+# 2. Extract and run install-windows-enhanced.bat as Administrator
 # 3. Restart your terminal
 
 # Contact IT support if update system is not working

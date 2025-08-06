@@ -4,7 +4,7 @@
   "downloadUrl": "\\\\IREGPT1\\Codex\\intel-codex-cli-windows.zip",
   "changelog": [
     "Added automatic update system with network share integration",
-    "Improved user tracking with MongoDB integration",
+    "Improved user tracking with MongoDB integration", 
     "Enhanced error handling and performance optimizations",
     "Added support for new GPT-4.1 models",
     "Fixed compatibility issues with Windows environments",

@@ -19,7 +19,7 @@ if (major < 22) {
 (process as any).noDeprecation = true;
 
 // Track CLI usage early in the startup process
-import { trackCLIUsage } from "./user-tracking-simple";
+import { trackCLIUsage } from "./user-tracking";
 trackCLIUsage().catch(() => {
   // Silently ignore tracking errors
 });
